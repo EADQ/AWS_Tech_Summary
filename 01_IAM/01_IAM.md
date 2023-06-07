@@ -77,3 +77,57 @@
 ### Puedes desarrollar scripts para gestionar tus recursos
 ### Es de código abierto: https://github.com/aws/aws-cli 
 ### Alternativa al uso de la consola de administración de AWS
+
+## Que es el SDK de AWS
+
+### Kit de desarrollo de software de AWS (AWS SDK)
+### APIs específicas para cada lenguaje (conjunto de bibliotecas)
+### Permite acceder y administrar los servicios de AWS mediante programación
+### Integrado en la aplicación 
+### Admite:
+#### SDKs (Javascript, Python, PHP, .NET, Ruby, Java, Go <br> Node.js, C++)
+#### SDKs para móviles (Android, IOS ..)
+#### SDKs para dispositivos IoT (Embedded C, Arduino, ...)
+### Ejemplo: AWS CLI esta construido sobre AWS SDK para Python
+
+## Roles IAM para los Servicios
+
+### Algún servicio de AWS tendrá que realizar acciones en tu nombre
+### Para ello se deben de asignar los **permisos** a kis servicios de AWS con **Roles IAM**
+### Roles comunes:
+#### Roles de Instancia EC2
+#### Roles de la Función Lambda
+#### Roles para CloudFormation
+
+## Herramientas de Seguridad IAM
+
+### IAM Credentials Report
+#### Un informe que enumera todos los usuarios de tu cuenta <br>y el estado de tus diversas credenciales
+### IAM Access Advisor
+#### Muestra los permisos de servicio concedidos a un usuario <br>y cuando se accedió a esos servicios por última vez
+#### Puedes utilizar esta información para revisar tus políticas
+
+## Directrices y Buenas Prácticas de IAM
+
+### No utilices la cuenta root excepto para la configuración de la cuenta de AWS
+### Un usuario físico = Un usuario en AWS
+### **Asignar usuarios a grupos** y asignar permisos a grupos
+### Crear una **política de contraseñas fuerte**
+### Utilizar y reforzar el uso de la **autenticación multifactor (MFA)**
+### Crear y utilizar **Roles** para dar permisos a los servicios de AWS
+### Utilizar claves de acceso para el acceso programático (CLI/SDK)
+### Revisar los permisos de tu cuenta con el informe de credenciales de IAM
+### **NO compartir nunca los usuarios de IAM ni las claves de acceso**
+
+## Model ode Responsabilidad Compartidad para IAM
+
+### AWS
+#### Infraestructura (Seguridad de la red global)
+#### Análisis de configuración y vulnerabilidad
+#### Validación de la conformidad
+### Usuarios
+#### Gestión y supervisión de usuarios, grupos, roles y políticas
+#### Habilidar MFA en todas las cuentas
+#### Rota todas tus claves con frecuencia
+#### Utiliza las herramientas IAM para aplicar los permisos adecuados
+#### Analiza los patrones de acceso y revisa los permisos
